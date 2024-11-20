@@ -18,6 +18,18 @@ jobs:
         with:
           version: 1.86.1
 
+      - name: Print Environment Variables
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_ID: ${{ secrets.SUPABASE_PROJECT_ID }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+          SUPABASE_CONNECTION_STRING: ${{ secrets.SUPABASE_CONNECTION_STRING }}
+        run: |
+          echo "SUPABASE_ACCESS_TOKEN: $SUPABASE_ACCESS_TOKEN"
+          echo "SUPABASE_PROJECT_ID: $SUPABASE_PROJECT_ID"
+          echo "SUPABASE_DB_PASSWORD: $SUPABASE_DB_PASSWORD"
+          echo "SUPABASE_CONNECTION_STRING: $SUPABASE_CONNECTION_STRING"
+
       - name: Deploy Edge Functions
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
