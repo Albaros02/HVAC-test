@@ -1,7 +1,7 @@
 
 CONFIG_FILE="functions-config.json"
 
-NO_VERIFY_FUNCTIONS=$(jq -r "development.noVerifyJwt[]" $CONFIG_FILE)
+NO_VERIFY_FUNCTIONS=$(jq -r ".development.noVerifyJwt[]" $CONFIG_FILE)
 VERIFY_FUNCTIONS=$(jq -r ".development.verifyJwt[]" $CONFIG_FILE)
 
 for function in $NO_VERIFY_FUNCTIONS; do
