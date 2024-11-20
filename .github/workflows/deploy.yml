@@ -17,6 +17,11 @@ jobs:
         uses: supabase/setup-cli@v1
         with:
           version: 1.86.1
+      - name: Link Supabase Project
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          supabase link --project-ref ${{ secrets.SUPABASE_PROJECT_ID }}
 
       - name: Print Environment Variables
         env:
