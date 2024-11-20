@@ -1,0 +1,10 @@
+{
+  "development": {
+    "noVerifyJwt": [
+      "login"
+    ],
+    "verifyJwt": [
+      "fetch_work_orders"
+    ]
+  }
+}
